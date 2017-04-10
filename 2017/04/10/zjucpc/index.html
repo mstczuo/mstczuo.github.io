@@ -97,7 +97,7 @@ BDFS的时候贪心。考虑连接(1, u)这条边，从1到u上的节点分别�
 <meta property="og:description" content="这套题不难，所有题目我都AC了，不提供源代码。题目大意就不描述了，具体看题。
 A如果$x=1$ or $y=1$则无穷如果$x=2$ and $y=2$，而且初始状态$a+b\geq 3$也是无穷的其他情况模拟即可。
 BDFS的时候贪心。考虑连接(1, u)这条边，从1到u上的节点分别为v0=1, v1, v2…, vm。那么从v0到vm/2的所有点距离不变，但是v[m/2+1]到vm所有点距离减">
-<meta property="og:updated_time" content="2017-04-10T03:58:07.000Z">
+<meta property="og:updated_time" content="2017-04-10T04:03:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙大校赛简要题解">
 <meta name="twitter:description" content="这套题不难，所有题目我都AC了，不提供源代码。题目大意就不描述了，具体看题。
@@ -331,7 +331,7 @@ BDFS的时候贪心。考虑连接(1, u)这条边，从1到u上的节点分别�
 </code></pre><h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>如果$x=1$ or $y=1$则无穷<br>如果$x=2$ and $y=2$，而且初始状态$a+b\geq 3$也是无穷的<br>其他情况模拟即可。</p>
 <h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>DFS的时候贪心。考虑连接(1, u)这条边，从1到u上的节点分别为v0=1, v1, v2…, vm。<br>那么从v0到vm/2的所有点距离不变，但是v[m/2+1]到vm所有点距离减少了。设ci是经过vi其他分支的节点数。<br>那么减少的代价是：<br>$$\sum_{i=m/2+1}^{m} c_i * (2i-1) $$<br>所以与处理一下前缀和即可。</p>
 <h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>与处理每年的9之和，然后枚举第一年的每一天和最后一年的每一天。</p>
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>动态规划：$f[i][j]$表示有i个独立集的森林（包含空集），去掉所有树的根之后剩下的森林有j个独立集 所需要的最少的点数<br>$$f[i][j] = \min(f[i/x][j/y] + f[x][y]), x|i, y|j$$<br>直接$O(n^2log^2n)$枚举即可。</p>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>动态规划：$f[i][j]$表示有i个独立集的森林（包含空集），去掉所有树的根之后剩下的森林有j个独立集 所需要的最少的点数<br>$$f[i][j] =\min( f[j][i-j]+1, \min_{x|i,y|j}(f[i/x][j/y] + f[x][y]) )$$<br>直接$O(n^2log^2n)$枚举即可。</p>
 <h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>很多搞法，你可以写一个C程序然后反汇编。。<br>一个简单的做法，递推算出斐波那契数列，然后读入n，将stack[n]copy到最后面。不需要sub, jmp, cmp 操作。</p>
 <h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>贪心，扫描线。每次将右端点最远的区间删去。</p>
 <h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><p>暴力搜索可以过。<br>另外，你可以将这些列取出来，然后排序，判断是否相等即可。</p>
