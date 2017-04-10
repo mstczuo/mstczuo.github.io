@@ -247,6 +247,261 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://mstczuo.github.io/2017/04/10/zjucpc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mstczuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="John Zuo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/10/zjucpc/" itemprop="url">
+                  浙大校赛一句话题解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T11:19:50+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>这套题不难，所有题目我都AC了，不提供源代码。题目大意就不描述了，具体看题。
+</code></pre><h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>如果$x=1$ or $y=1$则无穷<br>如果$x=2$ and $y=2$，而且初始状态$a+b\geq 3$也是无穷的<br>其他情况模拟即可。</p>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>DFS的时候贪心。考虑连接(1, u)这条边，从1到u上的节点分别为v0=1, v1, v2…, vm。<br>那么从v0到vm/2的所有点距离不变，但是v[m/2+1]到vm所有点距离减少了。设ci是经过vi其他分支的节点数。<br>那么减少的代价是：<br>$$\sum_{i=m/2+1}^{m} c_i * (2i-1) $$<br>所以与处理一下前缀和即可。</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>与处理每年的9之和，然后枚举第一年的每一天和最后一年的每一天。</p>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>动态规划：$f[i][j]$表示有i个独立集的森林（包含空集），去掉所有树的根之后剩下的森林有j个独立集 所需要的最少的点数<br>$$f[i][j] = \min(f[i/x][j/y] + f[x][y]), x|i, y|j$$<br>直接O(n^2logn)枚举即可。</p>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>很多搞法，你可以写一个C程序然后反汇编。。<br>一个简单的做法，递推算出斐波那契数列，然后读入n，将stack[n]copy到最后面。不需要sub, jmp, cmp 操作。</p>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>贪心，扫描线。每次将右端点最远的区间删去。</p>
+<h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><p>暴力搜索可以过。<br>另外，你可以将这些列取出来，然后排序，判断是否相等即可。</p>
+<h2 id="H"><a href="#H" class="headerlink" title="H"></a>H</h2><p>答案就是每个点成为saddle point的情况数之和，这样就之和一行一列有关了。<br>预处理一下每个点至少删多少数才能称为saddle point，然后剩下p个的话，对答案的贡献就是2^p。</p>
+<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p>首先很明显，$H&gt;C$ 那个公式才大于0<br>然后观察到C很小，如果C固定H越大越好。所以直接背包就行了。</p>
+<h2 id="J"><a href="#J" class="headerlink" title="J"></a>J</h2><p>这题可能是临时添加的水题。<br>上次出我校校赛题，没有出水题，<br>结果那个Board 惨不忍睹啊<br>所以还是浙大的命题人比较机制hhh</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://mstczuo.github.io/2017/04/03/dp-on-tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mstczuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="John Zuo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/03/dp-on-tree/" itemprop="url">
+                  树上DP的一些技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T20:22:22+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一个较常见的做法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">void dfs(int u,int par) &#123;</div><div class="line">	int mx = 0, se = 0;</div><div class="line">	f[u] = 0;</div><div class="line">	d[u] = 1;</div><div class="line">	for(auto v: g[u]) if(v != par) &#123;</div><div class="line">		dfs(v, u);</div><div class="line">		f[u] = max(f[u], f[v]);</div><div class="line">		d[u] = max(d[u], d[v] + 1);</div><div class="line">		if(d[v] &gt; mx) se = mx, mx = d[v]; else if(d[v] &gt; se) se = d[v];</div><div class="line">	&#125;</div><div class="line">	f[u] = max(f[u], mx + se);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dfs2(int u,int par) &#123;</div><div class="line">	vector&lt; pair&lt;int,int&gt; &gt; vf;</div><div class="line">	vector&lt; pair&lt;int,int&gt; &gt; vd;</div><div class="line">	for(auto v: g[u]) if(v != par) vf.pb(mp(f[v], v));</div><div class="line">	for(auto v: g[u]) if(v != par) vd.pb(mp(d[v], v));</div><div class="line">	if(par != -1) vf.pb(mp(pf[u], par));</div><div class="line">	if(par != -1) vd.pb(mp(pd[u], par));</div><div class="line">	sort(ALL(vf)); reverse(ALL(vf));</div><div class="line">	sort(ALL(vd)); reverse(ALL(vd));</div><div class="line">	while(vf.size() &lt; 3) vf.pb(mp(0,-2));</div><div class="line">	while(vd.size() &lt; 3) vd.pb(mp(0,-2));</div><div class="line">	for(auto v: g[u]) if(v != par) &#123;</div><div class="line">		pd[v] = 1;</div><div class="line">		if(vd.size() &gt; 0 &amp;&amp; vd[0].second != v) pd[v] = vd[0].first + 1;</div><div class="line">		else if (vd.size() &gt; 1 &amp;&amp; vd[1].second != v) pd[v] = vd[1].first + 1;</div><div class="line">		pf[v] = 0;</div><div class="line">		if(vf[0].second != v) pf[v] = vf[0].first;</div><div class="line">		else if (vf[1].second != v) pf[v] = vf[1].first;</div><div class="line">		if(vd[0].second != v &amp;&amp; vd[1].second != v) pf[v] = max(pf[v], vd[0].first + vd[1].first);</div><div class="line">		else if(vd[0].second != v &amp;&amp; vd[2].second != v) pf[v] = max(pf[v], vd[0].first + vd[2].first);</div><div class="line">		else if(vd[1].second != v &amp;&amp; vd[2].second != v) pf[v] = max(pf[v], vd[1].first + vd[2].first);</div><div class="line">		ans = max(ans, pf[v] + f[v] + 1);</div><div class="line">	&#125;</div><div class="line">	for(auto v: g[u]) if(v != par) dfs2(v, u);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一个比较妙的做法：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</div><div class="line">	f[u] = g[u] = <span class="number">0</span>;</div><div class="line">	f[u] = <span class="number">0</span>;</div><div class="line">	g[u] = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = (<span class="keyword">int</span>)ds[u].size()<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">		<span class="keyword">int</span> v = ds[u][i];</div><div class="line">		<span class="keyword">if</span> (pa[u] == v) <span class="keyword">continue</span>;</div><div class="line">		sf[v] = f[u];</div><div class="line">		sg[v] = g[u];</div><div class="line">		pa[v] = u;</div><div class="line">		dfs(v);</div><div class="line">		f[u] = max(f[u], f[v]);</div><div class="line">		f[u] = max(f[u], g[v]+<span class="number">1</span>+g[u]);</div><div class="line">		g[u] = max(g[u], g[v]+<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">duyet</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> ff, <span class="keyword">int</span> gg)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (pa[u] &gt; <span class="number">0</span>) ans = max(ans, ff + f[u] + <span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> my_f = ff;</div><div class="line">	<span class="keyword">int</span> my_g = gg + <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;v : ds[u]) &#123;</div><div class="line">		<span class="keyword">if</span> (v == pa[u]) <span class="keyword">continue</span>;</div><div class="line">		duyet(v, max(my_f, max(sf[v], sg[v]+my_g)), max(my_g, sg[v]));</div><div class="line">		my_f = max(my_f, max(f[v], my_g + g[v]+<span class="number">1</span>));</div><div class="line">		my_g = max(my_g, g[v]+<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>详细信息待补充。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://mstczuo.github.io/2017/03/28/probability/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -678,7 +933,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -691,7 +946,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
